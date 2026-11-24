@@ -1,8 +1,8 @@
 {
   "default-configuration": "Release",
   "configurations": [
-    "Debug",
-    "Release",
+    { "name": "Debug", "file": "Secrets.xcconfig" },
+    { "name": "Release", "file": "Secrets.xcconfig" },
   ],
   "localizations": {
     "development": "en",
@@ -20,9 +20,26 @@
     },
   ],
   "files": [
-    { "kind": "folder", "path": "S26W13SupabaseSDK", "target-membership": [ "S26W13SupabaseSDK" ] },
+    { "path": ".gitignore", "target-membership": [ "S26W13SupabaseSDK/resources" ] },
+    { "path": "Secrets.xcconfig", "target-membership": [ "S26W13SupabaseSDK/resources" ] },
+    {
+      "kind": "folder",
+      "path": "S26W13SupabaseSDK",
+      "target-membership": [
+        "S26W13SupabaseSDK",
+      ],
+      "membership-exceptions": [
+        {
+          "target": "S26W13SupabaseSDK",
+          "exclusions": [
+            "Info.plist",
+          ],
+        },
+      ],
+    },
     { "kind": "folder", "path": "S26W13SupabaseSDKTests", "target-membership": [ "S26W13SupabaseSDKTests" ] },
     { "kind": "folder", "path": "S26W13SupabaseSDKUITests", "target-membership": [ "S26W13SupabaseSDKUITests" ] },
+    { "kind": "group", "name": "Frameworks" },
     {
       "kind": "group",
       "name": "Products",
@@ -44,6 +61,13 @@
         "frameworks",
         "resources",
       ],
+      "package-product-members": [
+        {
+          "package": "supabase-swift",
+          "product-name": "Supabase",
+          "build-phase": { "build-phase": "frameworks" },
+        },
+      ],
       "build-settings": {
         "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
         "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
@@ -51,6 +75,7 @@
         "CURRENT_PROJECT_VERSION": "1",
         "ENABLE_PREVIEWS": "YES",
         "GENERATE_INFOPLIST_FILE": "YES",
+        "INFOPLIST_FILE": "S26W13SupabaseSDK/Info.plist",
         "INFOPLIST_KEY_UIApplicationSceneManifest_Generation": "YES",
         "INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents": "YES",
         "INFOPLIST_KEY_UILaunchScreen_Generation": "YES",
