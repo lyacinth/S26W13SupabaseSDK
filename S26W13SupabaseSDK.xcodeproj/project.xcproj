@@ -10,6 +10,15 @@
       "Base",
     ],
   },
+  "packages": [
+    {
+      "kind": "remote",
+      "repository": "https://github.com/supabase/supabase-swift",
+      "version": {
+        "up-to-next-major-version": "2.5.1",
+      },
+    },
+  ],
   "files": [
     { "kind": "folder", "path": "S26W13SupabaseSDK", "target-membership": [ "S26W13SupabaseSDK" ] },
     { "kind": "folder", "path": "S26W13SupabaseSDKTests", "target-membership": [ "S26W13SupabaseSDKTests" ] },
